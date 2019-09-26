@@ -1,0 +1,298 @@
+html, body{
+    min-width: 280px; /* Устанавливаем минимальную ширину */
+}
+
+img{
+    display: inline-block;
+}
+
+a{
+    transition: 0.2s ease-out; /* Плавный переход */
+}
+
+*{ /* Для всех элементов */
+    box-sizing: border-box;
+}
+
+/* .......................... HEADER ........................... */
+.header{
+    /* Настраиваем фон */
+    background: blue; /* Устанавливаем фон, он отобразится если не загрузится картинка */
+    background-image: url("images/bg-header.jpg"); /* Устанавливаем фоном нужную картинку */
+    background-repeat: no-repeat; /* Чтобы фон не повторялся, дублировался, а отображался один раз */
+    background-position: center; /* Чтобы фон отображался по центру */
+    background-size: cover; /* Чтобы фон пропорционально растягивался по размеру блока */
+    height: 100vh; /* Устанавливаем высоту, vh - еденица измерения, эквивалентно 1% высоты окна браузера. */
+    min-height: 400px; /* Минимальная высота шапки */
+    /* Настраиваем шрифт */
+    color: white; /* Цвет текста */
+    text-align: center; /* Выравниваем текст по центру, по горизонтали */
+    /* Используем flexbox для выравнивания текста по вертикали */
+    display: flex;
+    flex-direction: column; /* Направление, расположение контента внутри флексбокса */
+    align-items: center; /* Выравниваем по горизонтали */
+    justify-content: center;
+    position: relative;  /* Позиция - родитель */
+}
+
+.header__title{
+    font-size: 56px; /* Размер шрифта */
+    margin-bottom: 30px; /* Отступ снизу */
+    font-family: 'Merriweather', serif; /* Устанавливаем шрифт, который ранее подключили */
+    margin-top: -50px; /* Сдвинули блок на 50px вверх */
+}
+
+.header__slogan{
+    font-size: 28px; /* Размер шрифта  */
+    line-height: 42px; /* Устанавливаем высоту строчки */
+}
+
+.header__arrow{
+    font-size: 48px; /* Размер шрифта  */
+    height: 50px; /* Высота */
+    width: 60px; /* Ширина */
+    margin-left: -30px; /* Двигаем блок влево на половину его ширины */
+    position: absolute;
+    bottom: 50px; /* Отступ снизу */
+    left: 50%; /* Отступ слева */
+}
+
+/* .......................... GRID ........................... */
+.container{
+    width: 1140px; /* Устанавливаем ширину сетки */
+    margin-left: auto; /* Отступ слева */
+    margin-right: auto; /* Отступ справа */
+}
+
+.row:after{ /* Убираем обтекание */
+    clear: both;
+    content: "";
+    display: table;
+}
+
+.col-4{
+    width: 360px; /* Ширина колонки */
+    margin-right: 30px; /* Промежуток между колонками */
+    float: left; /* Чтобы колонки обтекали друг друга слевой стороны */
+}
+
+.col-4:last-child{ /* Псевдо класс, выбираем последнюю колонку */
+    margin-right: 0px; /* Убираем правый крайний промежуток */
+}
+
+/* .......................... PORTFOLIO ........................... */
+.portfolio{
+    padding-top: 70px; /* Внутренний, отступ сверху */
+    padding-bottom: 100px; /* Внутренний, отступ снизу */
+}
+
+.portfolio-item{
+    margin-bottom: 20px;
+}
+
+.title{
+    font-size: 46px; /* Размер шрифта */
+    margin-bottom: 60px; /* Отступ снизу */
+    font-family: 'Merriweather', serif; /* Устанавливаем шрифт, который ранее подключили */
+    text-align: center; /* Выравниваем по центру */
+}
+
+.portfolio-item__image{
+    margin-bottom: 17px; /* Отступ снизу */
+}
+
+.portfolio-item__image img{
+    max-width: 100%; /* Устанавливаем максимальную ширину изображения */
+    height: auto; /* Высота */
+}
+
+.portfolio-item__title{
+    font-size: 24px; /* Размер шрифта */
+    line-height: normal; /* Высота строчки */
+    margin-bottom: 5px; /* Отступ снизу */
+}
+
+.portfolio-item__title a{ /* Выбираем все ссылки */
+    text-decoration: none; /* Убираем подчеркивание */
+    color: #000; /* Устанавливаем черный цвет */
+    border-bottom: 1px solid #000;  /* Даем ей нижнее подчеркивание тонкой черной линией */
+}
+
+.portfolio-item__title a:hover{ /* Поведение ссылки в момент наведения на нее курсором */
+    color: #0052C2; /* Изменяем цвет ссылки */
+    border-color: rgba(0, 82, 194, 0.3); /* Изменяем цвет нижнего подчеркивания */
+}
+
+.portfolio-item__text{
+    font-size: 16px; /* Размер шрифта */
+    line-height: 1.5; /* Высота строчки */
+}
+
+.portfolio-item__text p {
+    margin-top: 0px; /* Отступ сверху */
+    margin-bottom: 15px; /* Отступ снизу */
+}
+
+/* .......................... PORTFOLIO SINGLE PAGE ........................... */
+.portfolio-single-page{
+    padding-top: 50px; /* Внутренний, отступ сверху */
+    padding-bottom: 50px; /* Внутренний, отступ снизу */
+    text-align: center; /* Распологаем текст по центру */
+
+}
+
+.portfolio-single-page img{
+    margin-bottom: 50px; /* Отступ снизу */
+    max-width: 100%; /* Чтобы картинка не выходила за пределы контейнера */
+    height: auto; /* Устанавливаем высоту */
+    /* Для того чтобы картинка распологалась по центру */
+    display: block; /* остается только выровнять картинку по горизонтали*/
+    margin-left: auto; /* Отступ слева */
+    margin-right: auto; /* Отступ справа */
+}
+
+.button-back{
+    font-weight: 700; /* Толщина шрифта */
+    text-decoration: none; /* Убираем подчеркивание у ссылки */
+    color: #0052C2; /* Меняем цвет ссылки */
+    text-transform: uppercase; /* Текст в верхнем регистре */
+    letter-spacing: 1.6px; /* Растояние между буквами */
+    display: inline-block;
+    border-width: 2px; /* Ширина рамки */
+    border-color: #0052C2; /* Цвет рамки */
+    border-style: solid; /* Стиль рамки, прямая, непрерывная линия */
+    border-radius: 50px; /* Скругление углов */
+    padding-top: 8px; /* Внутренний, отступ сверху */
+    padding-bottom: 8px; /* Внутренний, отступ снизу */
+    padding-left: 23px; /* Внутренний, отступ слева */
+    padding-right: 23px; /* Внутренний, отступ справа */
+    margin-bottom: 13px; /* Отступ снизу */
+    transition: 0.2s ease-out; /* Плавный переход */
+}
+
+.button-back:hover{
+    color: white; /* Меняем цвет текста */
+    background-color: #0052C2; /* Меняем цвет фона кнопки */
+}
+
+/* .......................... FOOTER ........................... */
+.footer{
+    background-color: #061634; /* Устанавливаем цвет фона */
+    color: #6479a2; /* Устанавливаем цвет текста */
+    padding-top: 90px; /* Внутренний, отступ сверху */
+    padding-bottom: 190px; /* Внутренний, отступ снизу */
+}
+
+.footer p{
+    margin-top: 0px; /* Отступ сверху */
+    margin-bottom: 15px; /* Отступ снизу */
+}
+
+p.footer__name{
+    font-size: 28px; /* Размер шрифта */
+    margin-bottom: 10px; /* Отступ снизу */
+    line-height: normal; /* Высота строки */
+    font-family: 'Merriweather', serif; /* Устанавливаем вид шрифта */
+}
+
+p.footer__social{
+    color: #FFF; /* Устанавливаем цвет шрифта */
+}
+
+p.footer__social-icons{
+    color: #FFF; /* Устанавливаем цвет шрифта */
+    font-size: 32px; /* Размер шрифта */
+}
+
+p.footer__social-icons a{
+    color: #FFF; /* Меняем цвет ссылки */
+    text-decoration: none; /* Убираем подчеркивание у ссылки */
+    margin-right: 30px; /* Отступ после иконки */
+}
+
+p.footer__social-icons a:last-child{
+    margin-right: 0px;  /* Отступ после последней иконки*/
+}
+
+.footer__social-icons a:hover{ /* Поведение ссылки в момент наведения на нее курсором */
+    color: #FFE400;  /* Меняем цвет */
+}
+
+.button{
+    font-weight: 700; /* Толщина шрифта */
+    text-decoration: none; /* Убираем подчеркивание у ссылки */
+    color: white; /* Меняем цвет ссылки */
+    text-transform: uppercase; /* Текст в верхнем регистре */
+    letter-spacing: 1.6px; /* Растояние между буквами */
+    display: inline-block;
+    border-width: 2px; /* Ширина рамки */
+    border-color: #FFF; /* Цвет рамки */
+    border-style: solid; /* Стиль рамки, прямая, непрерывная линия */
+    border-radius: 50px; /* Скругление углов */
+    padding-top: 8px; /* Внутренний, отступ сверху */
+    padding-bottom: 8px; /* Внутренний, отступ снизу */
+    padding-left: 23px; /* Внутренний, отступ слева */
+    padding-right: 23px; /* Внутренний, отступ справа */
+    margin-bottom: 13px; /* Отступ снизу */
+    transition: 0.2s ease-out; /* Плавный переход */
+}
+
+.button:hover{
+    color: #061634; /* Меняем цвет текста */
+    background-color: white; /* Меняем цвет фона кнопки */
+}
+
+/* .......................... MEDIA ........................... */
+@media (max-width: 1160px) { /* При ширине экрана в 1160px и менее будет выполнен данный медиа запрос */
+    .container{
+        width: 100%; /* Ширина контейнера */
+    }
+
+    .col-4{
+        width: 100%; /* Ширина колонки */
+        /* Реальная шрина = width: 100%; + border = 0 + padding = 15px + 15px; Итог: 100% + 30px */
+        box-sizing: border-box;
+        margin: 0; /* Изменяем все внешние отступы */
+        margin-bottom: 30px; /* Отступ снизу */
+        padding-left: 15px; /* Внутренний, отступ слева */
+        padding-right: 15px; /* Внутренний, отступ справа */
+        text-align: center; /* Распологаем контент по центру */
+    }
+
+    .header{
+        padding-left: 15px; /* Внутренний, отступ слева */
+        padding-right: 15px; /* Внутренний, отступ справа */
+    }
+
+    .header__title{
+        font-size: 38px; /* Размер шрифта */
+        line-height: 48px; /* Высота линии */
+        margin-bottom: 15px; /* Отступ снизу */
+    }
+
+    .header__slogan{
+        font-size: 22px; /* Размер шрифта */
+        line-height: 38px; /* Высота линии */
+    }
+
+    .portfolio{
+        padding-top: 40px; /* Внутренний, отступ сверху */
+        padding-bottom: 50px; /* Внутренний, отступ снизу */
+    }
+
+    .title{
+        font-size: 36px; /* Размер шрифта */
+    }
+
+    .footer{
+        padding-top: 70px; /* Внутренний, отступ сверху */
+        padding-bottom: 60px; /* Внутренний, отступ снизу */
+    }
+}
+
+ /*  */
+
+/*
+    font-family: 'Merriweather', serif;
+    font-family: 'PT Sans Caption', sans-serif;
+*/
